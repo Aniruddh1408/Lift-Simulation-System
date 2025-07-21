@@ -9,7 +9,8 @@ public class Lift {
     private int currentFloor;   // e.g. -2 for B2, 0 for Ground, 3 for 3rd floor
     private boolean movingUp;
     private boolean isMoving;
-
+    private final int MIN_FLOOR = -1;
+    private final int MAX_FLOOR = 13;
     // Constructor sets lift at ground floor (0)
     public Lift() {
         this.currentFloor = 0;   // Default starting point: Ground Floor
@@ -39,6 +40,10 @@ public class Lift {
      * @param targetFloor the destination floor to move to
      */
     public void moveToFloor(int targetFloor) {
+        if (targetFloor < MIN_FLOOR || targetFloor > MAX_FLOOR) {
+            System.out.println("Invalid floor: " + targetFloor);
+            return;
+        }
         isMoving = true;
 
         while (currentFloor != targetFloor) {
