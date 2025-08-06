@@ -11,6 +11,7 @@ public class Lift {
     private boolean isMoving;
     private final int MIN_FLOOR = -1;
     private final int MAX_FLOOR = 13;
+
     // Constructor sets lift at ground floor (0)
     public Lift() {
         this.currentFloor = 0;   // Default starting point: Ground Floor
@@ -63,6 +64,10 @@ public class Lift {
             }
         }
 
-        isMoving = false; // Stop when destination reached
+        isMoving = false;
+        // Stop when destination reached
+    }
+    public void setStatus(String status) {
+        System.out.println("[Lift Status] " + status);
     }
 }
