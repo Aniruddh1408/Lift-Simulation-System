@@ -4,7 +4,7 @@ Overview:
 The Lift Simulation System is a Java-based project that simulates the working of elevators in a multi-floor building. The system demonstrates real-time lift movement, floor requests, and interactive GUI-based control. This project is ideal for learning object-oriented programming concepts, GUI design with Java Swing, and event-driven programming.
 
 Features:
-1. Multi-floor support: Simulates buildings with floors ranging from -1 (basement) to 13th floor.
+1. Multi-floor support: Simulates buildings with floors ranging from -1 (basement) to 7th floor.
 2. Lift movement simulation: Handles multiple lifts, moving up or down according to requests.
 3. GUI-based interface: Interactive graphical interface showing lift positions and floor buttons.
 4. Floor call buttons: Each floor has buttons to request lifts.
