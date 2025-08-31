@@ -70,4 +70,13 @@ public class Lift {
     public void setStatus(String status) {
         System.out.println("[Lift Status] " + status);
     }
+
+    public int getMaxFloor() {
+        return MAX_FLOOR;
+    }
+
+    public int getMinFloor() {
+        return MIN_FLOOR;
+    }
+
 }
