@@ -82,4 +82,8 @@ public class LiftController {
     public void stopController() {
         timer.stop();
     }
+
+    public Lift getLift() {
+        return lift;
+    }
 }
