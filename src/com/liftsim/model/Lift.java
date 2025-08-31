@@ -10,7 +10,7 @@ public class Lift {
     private boolean movingUp;
     private boolean isMoving;
     private final int MIN_FLOOR = -1;
-    private final int MAX_FLOOR = 13;
+    private final int MAX_FLOOR = 7;
 
     // Constructor sets lift at ground floor (0)
     public Lift() {

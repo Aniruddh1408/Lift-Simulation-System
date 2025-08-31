@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class LiftSystem {
     public static void main(String[] args) {
-        // Run GUI in Swing's Event Dispatch Thread (best practice for Swing apps)
+        // Run GUI in Swing's Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
             Lift lift = new Lift();                      // Create lift model
             LiftController controller = new LiftController(lift); // Controller

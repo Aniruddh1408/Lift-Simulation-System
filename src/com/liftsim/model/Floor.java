@@ -39,7 +39,7 @@ public class Floor extends JPanel {
         add(floorLabel);
 
         // Only add UP button if not the topmost floor
-        if (floorNumber < 13) {
+        if (floorNumber < 7) {
             upButton = new JButton("Up");
             add(upButton);
         }
