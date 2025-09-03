@@ -6,7 +6,7 @@ import java.util.*;
 
 
 public class LiftController {
-    private static final int TOP_FLOOR = 13;
+    private static final int TOP_FLOOR = 7;
     private static final int BOTTOM_FLOOR = -1;
 
     // Reference to the lift being controlled

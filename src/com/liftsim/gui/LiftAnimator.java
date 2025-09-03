@@ -8,6 +8,7 @@ import java.awt.*;
 public class LiftAnimator extends JPanel {
     private LiftController controller;
     private int liftY; // Y-position of lift (pixels)
+    private Timer animationTimer;
 
     private final int FLOOR_HEIGHT = 80; // pixel height per floor
     private final int LIFT_WIDTH = 60;
@@ -25,27 +26,33 @@ public class LiftAnimator extends JPanel {
     }
 
     public void moveLift(int targetFloor) {
-        new Thread(() -> {
-            int currentFloor = controller.getLift().getCurrentFloor();
-            int currentY = getLiftY(currentFloor);
-            int targetY = getLiftY(targetFloor);
+        if (animationTimer != null && animationTimer.isRunning()) {
+            animationTimer.stop();
+        }
 
-            int step = (targetY < currentY) ? -5 : 5;
+        int targetY = getLiftY(targetFloor);
+        int step = (targetY < liftY) ? -2 : 2; // fixed speed: 2px per tick
 
-            while ((step < 0 && currentY > targetY) || (step > 0 && currentY < targetY)) {
-                currentY += step;
-                liftY = currentY;
-                repaint();
-                try {
-                    Thread.sleep(20); // smoother movement (faster refresh)
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+        animationTimer = new Timer(20, e -> { // 50 frames/sec
+            if ((step > 0 && liftY < targetY) || (step < 0 && liftY > targetY)) {
+                int nextY = liftY + step;
+
+                // clamp at destination only
+                if ((step > 0 && nextY > targetY) || (step < 0 && nextY < targetY)) {
+                    nextY = targetY;
                 }
+
+                liftY = nextY;
+                repaint();
+            } else {
+                liftY = targetY;
+                repaint();
+                animationTimer.stop();
             }
-            liftY = targetY;
-            repaint();
-        }).start();
+        });
+        animationTimer.start();
     }
+
 
     @Override
     protected void paintComponent(Graphics g) {
