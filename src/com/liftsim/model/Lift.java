@@ -68,7 +68,7 @@ public class Lift {
         // Stop when destination reached
     }
     public void setStatus(String status) {
-        System.out.println("[Lift Status] " + status);
+        System.out.println("[Lift Status]: " + status);
     }
 
     public int getMaxFloor() {
