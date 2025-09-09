@@ -53,7 +53,6 @@ public class LiftAnimator extends JPanel {
         animationTimer.start();
     }
 
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

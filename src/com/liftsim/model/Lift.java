@@ -6,10 +6,10 @@ package com.liftsim.model;
  * ground floor (0), and basement floors (negative numbers).
  */
 public class Lift {
-    private int currentFloor;   // e.g. -2 for B2, 0 for Ground, 3 for 3rd floor
+    private int currentFloor;   // e.g.  0 for Ground, 3 for 3rd floor
     private boolean movingUp;
     private boolean isMoving;
-    private final int MIN_FLOOR = -1;
+    private final int MIN_FLOOR = 0;
     private final int MAX_FLOOR = 7;
 
     // Constructor sets lift at ground floor (0)

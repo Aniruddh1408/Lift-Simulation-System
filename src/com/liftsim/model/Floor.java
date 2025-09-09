@@ -45,7 +45,7 @@ public class Floor extends JPanel {
         }
 
         // Only add DOWN button if not the bottommost floor
-        if (floorNumber > -1) {
+        if (floorNumber > 0) {
             downButton = new JButton("Down");
             add(downButton);
         }
